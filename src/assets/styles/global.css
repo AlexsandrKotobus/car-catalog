@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+    color: aliceblue;
+    
+}
+.car-item{
+    border: 1px solid gray;
+    padding: 15px;
+    margin: auto;
+}
