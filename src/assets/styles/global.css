@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Golos+Text:wght@400..900&family=Monomaniac+One&family=Pacifico&family=Satisfy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
+    font-family: "Golos Text", sans-serif;
     background-color: black;
     color: aliceblue;
+    margin: 20px;
     
+}
+h1{
+    margin-bottom: 20px;
 }
 .car-item{
     border: 1px solid gray;
