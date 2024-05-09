@@ -1,24 +1,21 @@
-import styles from './Home.module.css'
+// import styles from './Home.module.css'
 import {cars} from './cars.data'
+import CarItem from './car-item/CarItem';
 
 
 const Home = () => {
+    console.log("car name + ",cars.name, cars, )
+
     return (
         <div>
             <h1>Cars catalog</h1>
             <div>
-                {cars.map(car => (
-                    // обязательный key на главном элементе
-                   <div className={styles.item} key={car.id}>
-                   <div className={styles.image} style={{backgroundImage: `url(${car.image})`,}}/>
-                   <div className={styles.info}>
-                        <h2>{car.name}</h2>
-                        <p>{new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(car.price)}</p>
-                        <button>Read more</button>
-                   </div>
-                </div>
-               )
-               )}
+                {cars.length ? (
+                        cars.map(car => (
+                       <CarItem key={car.id} car={car}/>
+                    //    console.log("1 car ", car)
+                       
+                    ))) : <p>There are not cars</p>  }
             </div>           
         </div>
     );
