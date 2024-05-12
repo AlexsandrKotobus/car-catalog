@@ -3,7 +3,7 @@
 import styles from '../Home.module.css'
 
 
-const CarItem = ({car}) => {
+const CarItem = ({ car }) => {
     console.log('car ... ', car.name )
     return (
         <div>

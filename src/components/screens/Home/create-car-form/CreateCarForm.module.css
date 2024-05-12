@@ -1,0 +1,20 @@
+.form{
+    margin: 10px auto 30px;
+}
+.form input {
+    padding: 5px  10px;
+    border: none;
+    outline: none;
+    display: flex;
+    /* чтоб переносить кажд инпут на нов строку */
+    /* width: 100%;  */
+    transition: border-color 0.4s ease;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+    font-family: "Golos Text", sans-serif; /*шрифт укадывает для кнопок и инпутов сотдельно*/
+
+}
+.form input:hover{
+    border-color: aqua;
+}
+

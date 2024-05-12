@@ -1,6 +1,7 @@
 // import styles from './Home.module.css'
 import {cars} from './cars.data'
 import CarItem from './car-item/CarItem';
+import CreateCarForm from './create-car-form/CreateCarForm';
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     return (
         <div>
             <h1>Cars catalog</h1>
+            <CreateCarForm/>
             <div>
                 {cars.length ? (
                         cars.map(car => (
