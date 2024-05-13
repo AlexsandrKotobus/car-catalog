@@ -1,16 +1,23 @@
 // import styles from './Home.module.css'
-import {cars} from './cars.data'
+import {useEffect, useState} from 'react'
+import {cars as carsData } from './cars.data'
 import CarItem from './car-item/CarItem';
 import CreateCarForm from './create-car-form/CreateCarForm';
 
 
 const Home = () => {
-    console.log("car name + ",cars.name, cars, )
+    // console.log("car name + ",cars.name, cars, )
+    // значение по дефолту - изначальный массив с данными
+    const [cars, setCars] = useState(carsData)
 
+    // useEffect(()=> {
+
+    // },[])
     return (
         <div>
             <h1>Cars catalog</h1>
-            <CreateCarForm/>
+            {/* добавляем setCars для CreateCarForm */}
+            <CreateCarForm setCars={setCars}/>
             <div>
                 {cars.length ? (
                         cars.map(car => (
