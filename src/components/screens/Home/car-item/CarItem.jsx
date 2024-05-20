@@ -4,7 +4,7 @@ import styles from '../Home.module.css'
 
 
 const CarItem = ({ car }) => {
-    console.log('car ... ', car.name )
+    // console.log('car ... ', car.name )
     return (
         <div>
              <div className={styles.item}>

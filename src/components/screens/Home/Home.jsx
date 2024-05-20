@@ -8,11 +8,17 @@ import CreateCarForm from './create-car-form/CreateCarForm';
 const Home = () => {
     // console.log("car name + ",cars.name, cars, )
     // значение по дефолту - изначальный массив с данными
-    const [cars, setCars] = useState(carsData)
+    const [cars, setCars] = useState([])
 
-    // useEffect(()=> {
-
-    // },[])
+    useEffect(()=> {
+       const fetchData = async() => {
+        const response = await fetch('http://localhost:4200/cars')
+        const data = await response.json()
+        setCars(data)
+        console.log("data - ", data)
+       }
+        fetchData()
+    },[cars])
     return (
         <div>
             <h1>Cars catalog</h1>
