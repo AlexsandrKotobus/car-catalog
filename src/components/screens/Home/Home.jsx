@@ -1,9 +1,10 @@
 // import styles from './Home.module.css'
 import {useEffect, useState} from 'react'
-import {cars as carsData } from './cars.data'
+// import {cars as carsData } from './cars.data'
 import CarItem from './car-item/CarItem';
 import CreateCarForm from './create-car-form/CreateCarForm';
-import axios from 'axios';
+// import axios from 'axios';
+import { CarService } from '../../../services/carservice';
 
 
 const Home = () => {
@@ -13,9 +14,8 @@ const Home = () => {
 
     useEffect(()=> {
        const fetchData = async() => {
-        const response = await axios.get('http://localhost:4200/cars')
-        setCars(response.data)
-        
+        const data = await CarService.getAll()
+        setCars(data)
        }
         fetchData()
     },[cars])
