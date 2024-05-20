@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import {cars as carsData } from './cars.data'
 import CarItem from './car-item/CarItem';
 import CreateCarForm from './create-car-form/CreateCarForm';
+import axios from 'axios';
 
 
 const Home = () => {
@@ -12,10 +13,9 @@ const Home = () => {
 
     useEffect(()=> {
        const fetchData = async() => {
-        const response = await fetch('http://localhost:4200/cars')
-        const data = await response.json()
-        setCars(data)
-        console.log("data - ", data)
+        const response = await axios.get('http://localhost:4200/cars')
+        setCars(response.data)
+        
        }
         fetchData()
     },[cars])
