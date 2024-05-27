@@ -1,24 +1,29 @@
 // import styles from './Home.module.css'
-import {useEffect, useState} from 'react'
-// import {cars as carsData } from './cars.data'
+import {/*useEffect,*/ useState} from 'react'
+// import {cars as carsData } from './cars.data'    /* для имитации сервера*/
+import { cars as carsData } from '../../../../public/images/dbcars'
+
+
 import CarItem from './car-item/CarItem';
 import CreateCarForm from './create-car-form/CreateCarForm';
-// import axios from 'axios';
-import { CarService } from '../../../services/carservice';
+
+// import { CarService } from '../../../services/carservice';
 
 
 const Home = () => {
-    // console.log("car name + ",cars.name, cars, )
+    console.log("cars + ", carsData, )
+    
     // значение по дефолту - изначальный массив с данными
-    const [cars, setCars] = useState([])
-
-    useEffect(()=> {
-       const fetchData = async() => {
-        const data = await CarService.getAll()
-        setCars(data)
-       }
-        fetchData()
-    },[cars])
+    // const [cars, setCars] = useState([])          /* для имитации сервера - e useEffect нач знач пуст массив*/
+    const [cars, setCars] = useState(carsData)
+     /* для имитации сервера*/
+    // useEffect(()=> {
+    //    const fetchData = async() => {
+    //     const data = await CarService.getAll()
+    //     setCars(data)
+    //    }
+    //     fetchData()
+    // },[cars])
     return (
         <div>
             <h1>Cars catalog</h1>
